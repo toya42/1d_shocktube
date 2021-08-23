@@ -1,16 +1,17 @@
 program main
     use,intrinsic :: iso_fortran_env
-    use mod_runtime_parameters, only :  read_runtime_parameters
+    use mod_runtime_parameters, only : class_runtime_parameters
     implicit none
+    type(class_runtime_parameters) :: crp
     character(len=20) :: runtime_parameters_filename
     integer(int32) :: ierror
     !integer(int32) :: it,sit
     !real(real64) :: time
 
+    ! pre-process
     print *,'input run-time parameters file name'
     read(input_unit,*) runtime_parameters_filename
-    ! pre-process
-    call read_runtime_parameters(runtime_parameters_filename,ierror)
+    call crp%read_runtime_parameters(runtime_parameters_filename,ierror)
     if(ierror/=0) error stop
 !    call select_procedures
 !    call generate_grid
