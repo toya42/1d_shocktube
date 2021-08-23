@@ -1,0 +1,28 @@
+# thermodynamics
+0.8     # heat capacity ratio
+# initial flow field
+#   left state
+1.0     # density, \rho_l
+0.0     # velocity, \v_l
+1.0     # pressure, \p_l
+#   right state
+-0.125   # density, \rho_r
+1.0     # velocity, \v_r
+-0.1     # pressure, \p_r
+# time discretization
+#   delta t
+-0.1
+#   accuracy
+4       # 1-3
+# space discretization and interpolation
+#   number of grid points, that must be an even number.
+101
+#   accuracy
+4       # 1-3
+#   values that interpolated by MUSCL scheme
+-1       # 1:characteristics, 2:primitives, 3:conservatives
+#   limiter (accuracy=2)
+3       # 0:w/o limiter, 1:superbee, 2:minmod
+# loop control
+-1      # max time step
+0       # interval of flow field output
